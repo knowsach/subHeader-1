@@ -32,10 +32,12 @@ export class AppComponent {
   title = 'subHeader';
   displayedColumns: string[];
   displayedSubColumns: string[];
+  fixResizeableColumns: string[];
   dataSource:any;
   constructor(){
     this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
-    this.displayedSubColumns = ['first', 'second'];
+    this.fixResizeableColumns = ['first', 'second', 'third', 'fourth'];
+    this.displayedSubColumns = ['Group-1', 'Group-2'];
     this.dataSource = ELEMENT_DATA;
   }
 
@@ -43,7 +45,8 @@ export class AppComponent {
     setTimeout(function(){
       $('#table').colResizable({         //colResizable - jquery pluging to resize.
         resizeMode:'overflow',
-        minWidth:50
+        minWidth:50,
+        liveShow: true
       })
     },100);
   }

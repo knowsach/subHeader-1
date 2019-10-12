@@ -1,3 +1,8 @@
 #table th{
     border: 1px solid black;
 }
+
+#table tr:first-child{
+    visibility: hidden;
+    height: 0 !important;
+}
