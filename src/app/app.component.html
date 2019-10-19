@@ -2,23 +2,6 @@
 
 <table id="table" mat-table [dataSource]="dataSource" style="width: 100%;">
 
-  <!-- Fix resize columngs -->
-  <ng-container matColumnDef="first">
-    <th mat-header-cell *matHeaderCellDef ></th>
-  </ng-container>
-
-  <ng-container matColumnDef="second">
-    <th mat-header-cell *matHeaderCellDef ></th>
-  </ng-container>
-
-  <ng-container matColumnDef="third">
-    <th mat-header-cell *matHeaderCellDef ></th>
-  </ng-container>
-
-  <ng-container matColumnDef="fourth">
-    <th mat-header-cell *matHeaderCellDef ></th>
-  </ng-container>
-  
   <!-- Group columns -->
     <!-- group 1 -->
   <ng-container matColumnDef="Group-1">
@@ -55,7 +38,6 @@
 </ng-container>
 <!-- End -->
 
-  <tr mat-header-row *matHeaderRowDef="fixResizeableColumns"></tr>
   <tr mat-header-row *matHeaderRowDef="displayedSubColumns"></tr>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

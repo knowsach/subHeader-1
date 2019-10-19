@@ -33,7 +33,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/colresizable/colResizable-1.6.min.js"
+              "./third-party-js/colResizable.min.js"
             ]
           },
           "configurations": {

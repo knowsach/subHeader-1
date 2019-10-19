@@ -36,17 +36,18 @@ export class AppComponent {
   dataSource:any;
   constructor(){
     this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
-    this.fixResizeableColumns = ['first', 'second', 'third', 'fourth'];
     this.displayedSubColumns = ['Group-1', 'Group-2'];
     this.dataSource = ELEMENT_DATA;
   }
 
   ngOnInit(){
     setTimeout(function(){
-      $('#table').colResizable({         //colResizable - jquery pluging to resize.
-        resizeMode:'overflow',
+      $('#table').colResizable({
+        resizeMode:'overflow', 
         minWidth:50,
-        liveShow: true
+        liveShow: true,
+        layoutFixed: false,
+        find: ">tbody>tr:first>td"
       })
     },100);
   }
