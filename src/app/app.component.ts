@@ -32,18 +32,22 @@ export class AppComponent {
   title = 'subHeader';
   displayedColumns: string[];
   displayedSubColumns: string[];
+  fixResizeableColumns: string[];
   dataSource:any;
   constructor(){
     this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
-    this.displayedSubColumns = ['first', 'second'];
+    this.displayedSubColumns = ['Group-1', 'Group-2'];
     this.dataSource = ELEMENT_DATA;
   }
 
   ngOnInit(){
     setTimeout(function(){
-      $('#table').colResizable({         //colResizable - jquery pluging to resize.
-        resizeMode:'overflow',
-        minWidth:50
+      $('#table').colResizable({
+        resizeMode:'overflow', 
+        minWidth:50,
+        liveShow: true,
+        layoutFixed: false,
+        find: ">tbody>tr:first>td"
       })
     },100);
   }
